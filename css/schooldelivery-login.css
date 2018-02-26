@@ -1,0 +1,99 @@
+body{
+  /* background: #708f06; */
+  /* font-family: 'Catamaran', sans-serif; */
+  font-family: 'Ropa Sans', sans-serif;
+  font-size: 18px;
+  /* background-color: #f89e14; */
+  /* margin-bottom: 500px; */
+  /* background-color: white; */
+}
+.container{
+  /* background: white; */
+  padding-bottom: 10px;
+  /* background: #f89e14; /*orange-like*/
+  background: white;
+  /* margin-top: 300px; */
+  /* width: auto; */
+  /* margin-left: auto;
+  margin-right: auto; */
+}
+.container-back{
+  width: auto;
+  background-color: white;
+  margin-top: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  /* padding-bottom: 150px; */
+  /* padding-top: 100px; */
+  /* height: auto; */
+}
+.logo-image
+{
+  margin-left: auto;
+  margin-right: auto;
+}
+.forgot-passwd
+{
+  margin-top: 5px;
+}
+/* .btn btn-default{
+  font-family: 'Ropa Sans', sans-serif;
+} */
+.header-opts-li
+{
+  margin-right: 10px;
+  margin-left: 5px;
+  margin-top: 10px;
+  color: #white;
+  /* color: #116b90; */
+
+}
+.header-opts-a
+{
+  margin-left: 5px;
+  color: #fffe96;
+}
+
+.navbar{
+  padding-top: 20px;
+  background: #708f06;
+
+}
+.navbar-default .navbar-brand{
+  font-size: 25px;
+  color: white;
+  font-weight: 900;
+  /* padding-left: 50px;
+  padding-right: 50px; */
+}
+
+.navbar-header{
+  height: 75px;
+  margin-top: 10px;
+  padding-left: 15px
+}
+
+
+.navbar-brand a{
+  padding-top: 15px;
+}
+
+.navbar-right{
+  color: white;
+  margin-top: 15px;
+}
+
+.header-image
+{
+  display: block;
+  float: left;
+}
+.header-image img{
+  width: 75px;
+  height: 75px;
+
+}
+/* .navbar-header{
+  font-size: 25px;
+  /* color: black;
+} */
