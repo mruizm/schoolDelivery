@@ -8,12 +8,15 @@
     <script  src="https://code.jquery.com/jquery-3.3.1.min.js"
     integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+     integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
     </script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
-    <link rel="stylesheet" href="css/schooldelivery.css">
+    <link id="bsdp-css" href="bootstrap-datepicker/css/bootstrap-datepicker3.min.css" rel="stylesheet">
+    <script src="bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+    <link rel="stylesheet" href="css/schooldelivery_admin.css">
     <title>schoolDelivery - Dashboard</title>
   </head>
   </head>
@@ -61,31 +64,345 @@
           <div class="col-md-9">
             <div class="tab-content">
               <div role="tabpanel" class="tab-pane active" id="new-student">
-                <div class="thumbnail">
+                <div class="add-edit-student-radios">
+                  <div class="add-edit-student-radios-form">
+                    <form>
+                      <form>
+                        <label class="radio-inline">
+                        <input type="radio" name="optradio" data-toggle="collapse" data-target="#addStudent" aria-expanded="false" aria-controls="addStudent">Agregar Estudiante</label>
+                        <label class="radio-inline">
+                        <input type="radio" name="optradio" data-toggle="collapse" data-target="#editStudent" aria-expanded="false" aria-controls="editStudent">Editar Estudiante</label>
+                      </form>
+                    </form>
+                  </div>
+                </div>
+                <div class="collapse" id="addStudent">
+                  <div class="well">
+                    <h3>INFORMACIÓN DEL ESTUDIANTE</h3>
+                    <br>
+                    </br>
+                    <form>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="row">
+                            <div class="col-md-5">
+                              <label for="inputStudentId">Id del Estudiante:</label>
+                            </div>
+                            <div class="col-md-7">
+                              <input type="text" class="form-control" id="inputStudentId" placeholder="00001">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="row">
+                            <div class="col-md-6">
+                              <label for="inputAdminDate">Fecha de Ingreso:</label>
+                            </div>
+                            <div class="col-md-6">
+                              <input type="text" class="form-control" id="inputAdminDate" placeholder="00001">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    <hr>
+                    </hr>
+                    <p>Informacion Personal:</p>
+                      <div class="form-group">
+                        <div class="row">
+                          <div class="col-md-3">
+                            <label for="exampleInputEmail1">Nombre:</label>
+                          </div>
+                          <div class="col-md-5">
+                            <input type="text" class="form-control" id="inputName" placeholder="Nombre">
+                          </div>
+                          <div class="col-md-4">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="row">
+                          <div class="col-md-3">
+                            <label for="exampleInputEmail1">Primer Apellido:</label>
+                          </div>
+                          <div class="col-md-5">
+                            <input type="text" class="form-control" id="inputFirstLast" placeholder="Primer Apellido">
+                          </div>
+                          <div class="col-md-4">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="row">
+                          <div class="col-md-3">
+                            <label for="exampleInputEmail1">Segundo Apellido:</label>
+                          </div>
+                          <div class="col-md-5">
+                            <input type="text" class="form-control" id="inputSecondLast" placeholder="Segundo Apellido">
+                          </div>
+                          <div class="col-md-4">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="row">
+                          <div class="col-md-3">
+                            <label for="label_gender">Género:</label>
+                          </div>
+                          <div class="col-md-5">
+                            <div class="gender-radios">
+                              <div class="gender-radios-form">
+                                <form>
+                                  <form>
+                                    <label class="radio-inline">
+                                    <input type="radio" name="optradio">Masculino</label>
+                                    <label class="radio-inline">
+                                    <input type="radio" name="optradio">Femenino</label>
+                                  </form>
+                                </form>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-4">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="row">
+                          <div class="col-md-3">
+                            <label for="exampleInputEmail1">Fecha de Nacimiento:</label>
+                          </div>
+                          <div class="col-md-5" id="sandbox-container">
+                            <div class="input-group date" id="sandbox-container">
+                                <input type="text" class="form-control"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+                            </div>
+                          </div>
+                          <div class="col-md-4">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="row">
+                          <div class="col-md-3">
+                            <label for="exampleInputEmail1">Lugar de Nacimiento:</label>
+                          </div>
+                          <div class="col-md-5">
+                            <input type="text" class="form-control" id="inputSecondLast" placeholder="Lugar de Nacimiento">
+                          </div>
+                          <div class="col-md-4">
+                          </div>
+                        </div>
+                      </div>
+
+                      <hr>
+                      </hr>
+                      <p>Informacion de Contacto:</p>
+                      <div class="form-group">
+                        <div class="row">
+                          <div class="col-md-3">
+                            <label for="exampleInputEmail1">Dirección Línea 1:</label>
+                          </div>
+                          <div class="col-md-5">
+                            <input type="text" class="form-control" id="inputAddr1" placeholder="Línea 1">
+                          </div>
+                          <div class="col-md-4">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="row">
+                          <div class="col-md-3">
+                            <label for="exampleInputEmail1">Dirección Línea 2:</label>
+                          </div>
+                          <div class="col-md-5">
+                            <input type="text" class="form-control" id="inputAddr2" placeholder="Línea 2">
+                          </div>
+                          <div class="col-md-4">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="row">
+                          <div class="col-md-3">
+                            <label for="exampleInputEmail1">Provincia:</label>
+                          </div>
+                          <div class="col-md-5">
+                            <input type="text" class="form-control" id="inputProvincia" placeholder="Provincia">
+                          </div>
+                          <div class="col-md-4">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="row">
+                          <div class="col-md-3">
+                            <label for="exampleInputEmail1">Cantón:</label>
+                          </div>
+                          <div class="col-md-5">
+                            <input type="text" class="form-control" id="inputCanton" placeholder="Cantón">
+                          </div>
+                          <div class="col-md-4">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="row">
+                          <div class="col-md-3">
+                            <label for="exampleInputEmail1">Distrito:</label>
+                          </div>
+                          <div class="col-md-5">
+                            <input type="text" class="form-control" id="inputDistrito" placeholder="Distrito">
+                          </div>
+                          <div class="col-md-4">
+                          </div>
+                        </div>
+                      </div>
+                      <hr>
+                      </hr>
+                      <div class="form-group">
+                        <p>Adjuntar Fotografía:</p>
+                        <!-- <label for="exampleInputFile">Fotografía:</label> -->
+                        <input type="file" id="exampleInputFile">
+                        <!-- <p class="help-block">Example block-level help text here.</p> -->
+                      </div>
+                      <!-- <div class="checkbox">
+                        <label>
+                          <input type="checkbox"> Check me out
+                        </label>
+                      </div> -->
+                    <br>
+                    </br>
+                    <button type="submit" class="btn btn-default">Ingresar</button>
+                    </form>
+                  </div>
+                </div>
+                <div class="collapse" id="editStudent">
+                  <div class="well">
+                    <h3>BUSCAR ESTUDIANTE</h3>
+                    <br>
+                    </br>
+                    <form>
+                      <div class="form-group">
+                        <div class="row">
+                          <div class="col-md-3">
+                            <label for="exampleInputEmail1">Nombre:</label>
+                          </div>
+                          <div class="col-md-5">
+                            <input type="text" class="form-control" id="findName" placeholder="">
+                          </div>
+                          <div class="col-md-4">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="row">
+                          <div class="col-md-3">
+                            <label for="exampleInputEmail1">Apellido:</label>
+                          </div>
+                          <div class="col-md-5">
+                            <input type="text" class="form-control" id="findLast" placeholder="">
+                          </div>
+                          <div class="col-md-4">
+                          </div>
+                        </div>
+                      </div>
+                      <br>
+                      </br>
+                      <button type="submit" class="btn btn-default">Buscar</button>
+                    </form>
+                  </div>
+                </div>
+                <!-- <div class="thumbnail">
                   <a href="registry_and_admin.html"><i class="fas fa-user-plus"></i></a>
                   <div class="caption">
                     <h3>Agregar/Editar Estudiante.</h3>
                     <p>Para administrar información del estudiante</p>
                   </div>
-                </div>
+                </div> -->
               </div>
               <div role="tabpanel" class="tab-pane" id="new-teacher">
-                <div class="thumbnail">
+                <div class="add-edit-teacher-radios">
+                  <div class="add-edit-teacher-radios-form">
+                    <form>
+                      <label class="radio-inline">
+                      <input type="radio" name="optradio" data-toggle="collapse" data-target="#collapseExampleAdd" aria-expanded="false" aria-controls="collapseExampleAdd">Agregar Docente</label>
+                      <label class="radio-inline">
+                      <input type="radio" name="optradio" data-toggle="collapse" data-target="#collapseExampleEdit" aria-expanded="false" aria-controls="collapseExampleEdit">Editar Docente</label>
+                    </form>
+                  </div>
+                </div>
+                <div class="collapse" id="collapseExampleAdd">
+                  <div class="well">
+                    <form>
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputFile">File input</label>
+                        <input type="file" id="exampleInputFile">
+                        <!-- <p class="help-block">Example block-level help text here.</p> -->
+                      </div>
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox"> Check me out
+                        </label>
+                      </div>
+                      <button type="submit" class="btn btn-default">Submit</button>
+                    </form>
+                  </div>
+                </div>
+                <div class="collapse" id="collapseExampleEdit">
+                  <div class="well">
+                    <form action="/action_page.php">
+                      <h3>Editar Docente</h3>
+                      <label for="fname">First Name</label>
+                      <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+                      <label for="lname">Last Name</label>
+                      <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+                      <label for="country">Country</label>
+                      <select id="country" name="country">
+                        <option value="australia">Australia</option>
+                        <option value="canada">Canada</option>
+                        <option value="usa">USA</option>
+                      </select>
+
+                      <input type="submit" value="Submit">
+                    </form>
+                  </div>
+
+                </div>
+                <!-- <div class="thumbnail">
                   <a href="registry_and_admin.html"><i class="fas fa-user-plus"></i></a>
                   <div class="caption">
                     <h3>Agregar/Editar Profes@r.</h3>
                     <p>Para administrar información del docente.</p>
                   </div>
-                </div>
+                </div> -->
               </div>
               <div role="tabpanel" class="tab-pane" id="new-course">
-                <div class="thumbnail">
+                <div class="add-edit-course-radios">
+                  <div class="add-edit-course-radios-form">
+                    <form>
+                      <label class="radio-inline">
+                      <input type="radio" name="optradio">Agregar Curso</label>
+                      <label class="radio-inline">
+                      <input type="radio" name="optradio">Editar Curso</label>
+                    </form>
+                  </div>
+                </div>
+                <!-- <div class="thumbnail">
                   <a href="registry_and_admin.html"><i class="fas fa-user-plus"></i></a>
                   <div class="caption">
                     <h3>Agregar/Editar Cursos.</h3>
                     <p>Para administrar información del curso lectivo.</p>
                   </div>
-                </div>
+                </div> -->
               </div>
             </div>
           </div>
@@ -93,5 +410,22 @@
         <!-- Tab panes -->
       </div>
     </div>
+    <script type="text/javascript">
+      $('#collapseExampleAdd').on('show.bs.collapse', function () {
+        $('#collapseExampleEdit').collapse('hide')
+      })
+      $('#collapseExampleEdit').on('show.bs.collapse', function () {
+        $('#collapseExampleAdd').collapse('hide')
+      })
+      $('#addStudent').on('show.bs.collapse', function () {
+        $('#editStudent').collapse('hide')
+      })
+      $('#editStudent').on('show.bs.collapse', function () {
+        $('#addStudent').collapse('hide')
+      })
+      $('#sandbox-container .input-group.date').datepicker({
+        language: "es",
+      });
+    </script>
   </body>
 </html>

@@ -113,7 +113,7 @@ body{
 
 .tab-content
 {
-  margin-top: 50px;
+  /* margin-top: 50px; */
 }
 .add-edit-student-radios
 {
@@ -124,7 +124,17 @@ body{
   text-align: center;
 }
 .well{
-  margin-top: 50px;
+  margin-top: 25px;
+}
+.well h3{
+  text-align: center;
+}
+
+.form-control
+{
+  width: 100%;
+  display: inline;
+
 }
 .fa-user-plus
 {
@@ -195,9 +205,18 @@ h2{
   margin-bottom: 50px;
 }
 
-.caption h3, p
+.caption h3,
 {
   text-align: center;
+}
+
+label{
+  font-weight: normal;
+}
+
+p{
+  margin-bottom: 25px;
+  font-weight: 900;
 }
 
 .thumbnail
